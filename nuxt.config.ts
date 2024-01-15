@@ -25,6 +25,10 @@ export default defineNuxtConfig({
       link: [
         // <link rel="stylesheet" href="https://myawesome-lib.css">
         { rel: "icon", type: "image/svg", href: "/favicon.svg" },
+        {
+          rel: "stylesheet",
+          href: "https://fonts.googleapis.com/css?family=Vazirmatn",
+        },
         // { rel: "manifest", href: "/manifest.json" },
       ],
       // please note that this is an area that is likely to change
@@ -34,4 +38,5 @@ export default defineNuxtConfig({
       ],
     },
   },
+  css: ["@/assets/css/reset.css", "@/assets/css/style.css"],
 });
