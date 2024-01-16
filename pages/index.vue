@@ -2,7 +2,7 @@
 // import { ref, computed } from "vue";
 const getLoc = async () => {
   const url =
-    "http://ip-api.com/json/?fields=status,country,city,lat,lon,timezone";
+    "https://ip-api.com/json/?fields=status,country,city,lat,lon,timezone";
 
   const response = await fetch(url);
   const data = response.json();
