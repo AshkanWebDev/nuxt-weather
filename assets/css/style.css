@@ -21,11 +21,17 @@
   --p: 1rem;
 }
 body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
   font-family: var(--font);
+  color: white;
   cursor: context-menu;
   user-select: none;
   font-size: 100%;
-  color: var(--main-text-color);
 }
 input,
 button {
