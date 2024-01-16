@@ -26,7 +26,7 @@ body {
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  background: linear-gradient(rgb(47, 150, 163), rgb(48, 62, 143));
+  background: linear-gradient(rgba(13, 36, 76, 0.2), rgb(13, 36, 76));
   font-family: var(--font);
   color: white;
   cursor: context-menu;
