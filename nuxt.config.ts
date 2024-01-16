@@ -5,7 +5,7 @@ export default defineNuxtConfig({
     head: {
       title: "نمونه اپ آب و هوایی",
       htmlAttrs: {
-        dir: "rtl",
+        dir: "ltr",
         lang: "fa",
       },
       meta: [
