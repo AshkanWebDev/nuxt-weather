@@ -70,11 +70,11 @@ function getTemp(weTemp) {
     can: Math.floor(c),
   });
 }
-getLoc().then((locData) => {
-  const timeZone = locData.timezone;
-  console.log(locData);
-  getWeather(locData.lat, locData.lon).then(weData);
-});
+// getLoc().then((locData) => {
+//   const timeZone = locData.timezone;
+//   console.log(locData);
+//   getWeather(locData.lat, locData.lon).then(weData);
+// });
 </script>
 
 <template>
