@@ -1,4 +1,5 @@
 <script setup>
+// import { ref, computed } from "vue";
 const getLoc = async () => {
   const url =
     "http://ip-api.com/json/?fields=status,country,city,lat,lon,timezone";
@@ -9,9 +10,9 @@ const getLoc = async () => {
   return data;
 };
 const getWeather = async (lat, lon) => {
-  api = "f0894defae7c5584798f8812232a40c2";
+  let api = "f0894defae7c5584798f8812232a40c2";
 
-  url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${api}`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${api}`;
 
   const response = await fetch(url);
   const data = response.json();
@@ -70,25 +71,34 @@ function getTemp(weTemp) {
     can: Math.floor(c),
   });
 }
-// getLoc().then((locData) => {
-//   const timeZone = locData.timezone;
-//   console.log(locData);
-//   getWeather(locData.lat, locData.lon).then(weData);
-// });
+getLoc().then((locData) => {
+  const timeZone = locData.timezone;
+  console.log(locData);
+  console.log(timeZone);
+  getWeather(locData.lat, locData.lon).then((weData) => {
+    const weTemp = weData.main.temp;
+    const weMain = weData.weather[0].main;
+    const weDes = weData.weather[0].description;
+    console.log(weData);
+    console.log(weTemp, weMain, weDes);
+    return { weTemp, weMain, weDes };
+  });
+  return { timeZone };
+});
 </script>
 
 <template>
   <h1 id="opencode">نمونه اپ آب و هوایی</h1>
   <div class="location">
-    <h1 class="timezone">{{ $timeZone }}</h1>
-    <p class="icon">icon</p>
+    <h1 class="timezone">$timeZone</h1>
+    <p class="icon">$weMain</p>
   </div>
   <div class="temperature">
     <div class="degree-section">
-      <h2 class="degree">20</h2>
-      <span>C</span>
+      <h2 class="degree">$weTemp</h2>
+      <span>K</span>
     </div>
-    <div class="temperature-description">temperature-description</div>
+    <div class="temperature-description">$weDes</div>
   </div>
 </template>
 
