@@ -90,15 +90,15 @@ getLoc().then((locData) => {
 <template>
   <h1 id="opencode">نمونه اپ آب و هوایی</h1>
   <div class="location">
-    <h1 class="timezone">$timeZone</h1>
-    <p class="icon">$weMain</p>
+    <h1 class="timezone">{{ timeZone }}</h1>
+    <p class="icon">{{ weMain }}</p>
   </div>
   <div class="temperature">
     <div class="degree-section">
-      <h2 class="degree">$weTemp</h2>
+      <h2 class="degree">{{ weTemp }}</h2>
       <span>K</span>
     </div>
-    <div class="temperature-description">$weDes</div>
+    <div class="temperature-description">{{ weDes }}</div>
   </div>
 </template>
 
